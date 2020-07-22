@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace CodeCamp2020.Server.Controllers
+namespace CodeCamp2020.Server.Controllers.Api
 {
     [ApiController]
     [Route("[controller]")]
