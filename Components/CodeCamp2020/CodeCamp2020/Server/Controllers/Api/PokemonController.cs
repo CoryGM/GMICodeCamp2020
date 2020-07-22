@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 using CodeCamp2020.Data;
 using CodeCamp2020.Data.Models;
@@ -14,9 +15,12 @@ namespace CodeCamp2020.Server.Controllers.Api
     public class PokemonController : ControllerBase
     {
         private readonly IPokemonRepository _repository;
+        private readonly ILogger _logger;
 
-        public PokemonController(IPokemonRepository repository)
+        public PokemonController(IPokemonRepository repository,
+                                 ILogger<PokemonController> logger)
         {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
@@ -32,7 +36,8 @@ namespace CodeCamp2020.Server.Controllers.Api
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error retrieving Pokemon \"{id}\". Exception: {ex.Message}");
+                var baseMsg = $"Error retrieving Pokemon \"{id}\".";
+                _logger.LogError(ex, $"{baseMsg} Check the log for details.");
             }
 
             if (entity == null)
@@ -55,7 +60,8 @@ namespace CodeCamp2020.Server.Controllers.Api
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error retrieving Pokemon. Exception: {ex.Message}");
+                var baseMsg = $"Error retrieving Pokemon.";
+                _logger.LogError(ex, $"{baseMsg} Check the log for details.");
             }
 
             if (entities == null)
@@ -75,7 +81,8 @@ namespace CodeCamp2020.Server.Controllers.Api
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error retrieving Pokemon. Exception: {ex.Message}");
+                var baseMsg = $"Error searching Pokemon.";
+                _logger.LogError(ex, $"{baseMsg} Check the log for details.");
             }
 
             if (entities == null)

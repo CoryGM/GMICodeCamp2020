@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using CodeCamp2020.Data;
 using CodeCamp2020.Data.Json;
 using CodeCamp2020.Data.Json.Pokemons;
+using CodeCamp2020.PageServices.Pokemons;
 
 namespace CodeCamp2020.Server
 {
@@ -26,9 +27,9 @@ namespace CodeCamp2020.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            DataMapperJson.InitializeMapper();
-
-            services.AddSingleton<IPokemonRepository, PokemonRepositoryJson>();
+            //  Setup application services
+            var appConfigure = new AppConfigure();
+            appConfigure.Initialize(services);
 
             services.AddControllersWithViews();
             services.AddRazorPages();
