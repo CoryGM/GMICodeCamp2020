@@ -4,12 +4,4 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CodeCamp2020\Shared\CodeCamp2020.Shared.csproj" />
-  </ItemGroup>
-
 </Project>

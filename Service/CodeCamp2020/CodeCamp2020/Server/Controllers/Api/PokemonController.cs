@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 using CodeCamp2020.Data;
-using CodeCamp2020.Shared.Models;
+using CodeCamp2020.Data.Models;
 
-namespace CodeCamp2020.Server.Controllers
+namespace CodeCamp2020.Server.Controllers.Api
 {
     [ApiController]
     [Route("api/pokemon")]
@@ -39,6 +39,29 @@ namespace CodeCamp2020.Server.Controllers
                 return NotFound();
             else
                 return Ok(entity);
+        }
+
+        [HttpGet]
+        [Route("search")]
+        public async Task<ActionResult<Pokemon>> SearchAsync([FromQuery] string searchTerm,
+                                                             [FromQuery] int? page,
+                                                             [FromQuery] int? pageSize)
+        {
+            var entities = default(IEnumerable<Pokemon>);
+
+            try
+            {
+                entities = await _repository.SearchAsync(searchTerm, page, pageSize).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving Pokemon. Exception: {ex.Message}");
+            }
+
+            if (entities == null)
+                entities = new List<Pokemon>();
+
+            return Ok(entities);
         }
 
         [HttpGet]

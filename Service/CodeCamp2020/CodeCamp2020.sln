@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeCamp2020.Server", "Code
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeCamp2020.Client", "CodeCamp2020\Client\CodeCamp2020.Client.csproj", "{176857B3-7D86-475E-BCFA-76DD2BF2E006}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeCamp2020.Shared", "CodeCamp2020\Shared\CodeCamp2020.Shared.csproj", "{4B0A65DF-D70C-441C-AE5D-E2428A47BF57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeCamp2020.Data", "CodeCamp2020.Data\CodeCamp2020.Data.csproj", "{C96E0D59-C535-4936-8E7E-083E7A51FC89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamp2020.Data", "CodeCamp2020.Data\CodeCamp2020.Data.csproj", "{C96E0D59-C535-4936-8E7E-083E7A51FC89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamp2020.Data.Json", "CodeCamp2020.Data.Json\CodeCamp2020.Data.Json.csproj", "{80572919-834F-4C78-A05E-BE1089AD540D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeCamp2020.Shared", "CodeCamp2020\Shared\CodeCamp2020.Shared.csproj", "{4C3A166B-01A6-407E-B763-FDD7F2EAD49A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +27,18 @@ Global
 		{176857B3-7D86-475E-BCFA-76DD2BF2E006}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{176857B3-7D86-475E-BCFA-76DD2BF2E006}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{176857B3-7D86-475E-BCFA-76DD2BF2E006}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B0A65DF-D70C-441C-AE5D-E2428A47BF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B0A65DF-D70C-441C-AE5D-E2428A47BF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B0A65DF-D70C-441C-AE5D-E2428A47BF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B0A65DF-D70C-441C-AE5D-E2428A47BF57}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C96E0D59-C535-4936-8E7E-083E7A51FC89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C96E0D59-C535-4936-8E7E-083E7A51FC89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C96E0D59-C535-4936-8E7E-083E7A51FC89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C96E0D59-C535-4936-8E7E-083E7A51FC89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80572919-834F-4C78-A05E-BE1089AD540D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80572919-834F-4C78-A05E-BE1089AD540D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80572919-834F-4C78-A05E-BE1089AD540D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80572919-834F-4C78-A05E-BE1089AD540D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3A166B-01A6-407E-B763-FDD7F2EAD49A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3A166B-01A6-407E-B763-FDD7F2EAD49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3A166B-01A6-407E-B763-FDD7F2EAD49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3A166B-01A6-407E-B763-FDD7F2EAD49A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

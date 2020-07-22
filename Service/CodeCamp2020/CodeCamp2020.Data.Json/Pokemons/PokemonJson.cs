@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
-namespace CodeCamp2020.Shared.Models
+namespace CodeCamp2020.Data.Json.Pokemons
 {
-    public class Pokemon
+    public class PokemonJson
     {
         [JsonProperty(PropertyName = "Id")]
         public string Id { get; set; }
@@ -18,21 +18,6 @@ namespace CodeCamp2020.Shared.Models
 
         [JsonProperty(PropertyName = "Type 2")]
         public string Type2 { get; set; }
-
-        private List<string> _abilities;
-        [JsonProperty(PropertyName = "Abilities")]
-        public List<string> Abilities
-        {
-            get
-            {
-                if (_abilities == null)
-                    _abilities = new List<string>();
-
-                return _abilities;
-            }
-
-            set { _abilities = value; }
-        }
 
         [JsonProperty(PropertyName = "Category")]
         public string Category { get; set; }
@@ -73,18 +58,19 @@ namespace CodeCamp2020.Shared.Models
         [JsonProperty(PropertyName = "Speed")]
         public int? Speed { get; set; }
 
-        //private Moves _moves;
-        //public Moves Moves
-        //{
-        //    get
-        //    {
-        //        if (_moves == null)
-        //            _moves = new Moves();
+        private List<string> _abilities;
+        [JsonProperty(PropertyName = "Abilities")]
+        public List<string> Abilities
+        {
+            get
+            {
+                if (_abilities == null)
+                    _abilities = new List<string>();
 
-        //        return _moves;
-        //    }
+                return _abilities;
+            }
 
-        //    set { _moves = value; }
-        //}
+            set { _abilities = value; }
+        }
     }
 }
