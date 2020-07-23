@@ -21,6 +21,7 @@ namespace CodeCamp2020.Server
 
                 //  Page services
                 services.AddTransient<IPokedexPageService, PokedexPageService>();
+                services.AddTransient<IPokedexDetailPageService, PokedexDetailPageService>();
             }
         }
     }
