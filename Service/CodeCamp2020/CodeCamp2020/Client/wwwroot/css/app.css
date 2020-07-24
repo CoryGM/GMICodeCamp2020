@@ -191,7 +191,7 @@ app {
     }
 
     .pokedex-detail-pokemon-table-col {
-        min-width: 4rem;
+        min-width: 3.75rem;
     }
 }
 
@@ -200,7 +200,7 @@ app {
         width: 225px;
     }
     .pokedex-detail-pokemon-table-col {
-        min-width: 6rem;
+        min-width: 5.25rem;
     }
 }
 
