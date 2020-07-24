@@ -181,3 +181,51 @@ app {
         display: block;
     }
 }
+
+/**********************************************
+    pokedex-detail
+***********************************************/
+@media (max-width: 767.98px) {
+    .pokedex-detail-pokemon-picture {
+        width: 150px;
+    }
+
+    .pokedex-detail-pokemon-table-col {
+        min-width: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .pokedex-detail-pokemon-picture {
+        width: 225px;
+    }
+    .pokedex-detail-pokemon-table-col {
+        min-width: 6rem;
+    }
+}
+
+.pokedex-detail-pokemon-bio {
+    width: 275px;
+    min-width: 275px;
+}
+
+.pokedex-detail-pokemon-table-label {
+    color: whitesmoke;
+}
+
+.pokedex-detail-pokemon-table-text {
+    color: black;
+}
+
+
+
+.pokedex-detail-type-container {
+    margin-bottom: 0.25rem;
+}
+
+.pokedex-detail-type-button {
+    min-width: 12rem;
+    margin-bottom: 0.2rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}

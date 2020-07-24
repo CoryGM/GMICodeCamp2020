@@ -1,0 +1,136 @@
+﻿@page "/pokedex-detail"
+@page "/pokedex-detail/{Id}"
+
+<h3>@_pageTitle</h3>
+
+<div class="container-fluid">
+    @if (_viewModel.Errors.Any())
+    {
+
+    }
+    else
+    {
+        @if (!String.IsNullOrWhiteSpace(_viewModel.Entity.Name))
+        {
+            <div class="row">
+                <div class="col-md-5">
+                    <div>
+                        <img class="pokedex-detail-pokemon-picture"
+                             src="@_viewModel.Entity.PictureUrl"
+                             title="@_viewModel.Entity.Name" />
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="alert alert-primary pokedex-detail-pokemon-bio" role="alert">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="pokedex-detail-pokemon-table-label">
+                                    Height
+                                </div>
+                                <div class="pokedex-detail-pokemon-table-text">
+                                    @_viewModel.Entity.Height
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="pokedex-detail-pokemon-table-label">
+                                    Category
+                                </div>
+                                <div class="pokedex-detail-pokemon-table-text">
+                                    @_viewModel.Entity.Category
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="pokedex-detail-pokemon-table-label">
+                                    Weight
+                                </div>
+                                <div class="pokedex-detail-pokemon-table-text">
+                                    @_viewModel.Entity.Weight lbs
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="pokedex-detail-pokemon-table-label">
+                                    Abilities
+                                </div>
+                                <div class="pokedex-detail-pokemon-table-text">
+                                    @if (_viewModel.Entity.Abilities.Any())
+                                    {
+                                        foreach (var ability in _viewModel.Entity.Abilities)
+                                        {
+                                            @ability <br />
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @:None
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-5">
+                    <div class="pokedex-detail-pokemon-bio text-center">
+                        <h4>Type</h4>
+
+                        <div class="pokedex-detail-type-container text-center">
+                            <button type="button"
+                                    class="btn btn-primary btn-sm pokedex-detail-type-button"
+                                    disabled="disabled">
+                                @_viewModel.Entity.Type1
+                            </button>
+
+                            @if (!String.IsNullOrWhiteSpace(@_viewModel.Entity.Type2))
+                            {
+                                <button type="button"
+                                        class="btn btn-primary btn-sm pokedex-detail-type-button"
+                                        disabled="disabled">
+                                    @_viewModel.Entity.Type2
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 text-center">
+                    <table class="table table-sm table-responsive">
+                        <thead>
+                            <tr class="bg-primary text-center">
+                                <th class="pokedex-detail-pokemon-table-col">Hit<br />Points</th>
+                                <th class="pokedex-detail-pokemon-table-col">Attack</th>
+                                <th class="pokedex-detail-pokemon-table-col">Special<br />Attack</th>
+                                <th class="pokedex-detail-pokemon-table-col">Defense</th>
+                                <th class="pokedex-detail-pokemon-table-col">Special<br />Defense</th>
+                                <th class="pokedex-detail-pokemon-table-col">Speed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-primary text-center">
+                                <td class="pokedex-detail-pokemon-table-col">@_viewModel.Entity.HitPoints</td>
+                                <td class="pokedex-detail-pokemon-table-col">@_viewModel.Entity.Attack</td>
+                                <td class="pokedex-detail-pokemon-table-col">@_viewModel.Entity.SpecialAttack</td>
+                                <td class="pokedex-detail-pokemon-table-col">@_viewModel.Entity.Defense</td>
+                                <td class="pokedex-detail-pokemon-table-col">@_viewModel.Entity.SpecialDefense</td>
+                                <td class="pokedex-detail-pokemon-table-col">@_viewModel.Entity.Speed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    }
+</div>

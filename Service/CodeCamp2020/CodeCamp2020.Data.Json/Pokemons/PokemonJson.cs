@@ -22,10 +22,10 @@ namespace CodeCamp2020.Data.Json.Pokemons
         [JsonProperty(PropertyName = "Category")]
         public string Category { get; set; }
 
-        [JsonProperty(PropertyName = "Height (m)")]
-        public decimal? Height { get; set; }
+        [JsonProperty(PropertyName = "Height (ft)")]
+        public string Height { get; set; }
 
-        [JsonProperty(PropertyName = "Weight (kg)")]
+        [JsonProperty(PropertyName = "Weight (lbs)")]
         public decimal? Weight { get; set; }
 
         [JsonProperty(PropertyName = "Capture Rate")]

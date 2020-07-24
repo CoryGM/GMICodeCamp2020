@@ -10,7 +10,7 @@ namespace CodeCamp2020.Data.Models
         public string Type1 { get; set; }
         public string Type2 { get; set; }
         public string Category { get; set; }
-        public decimal? Height { get; set; }
+        public string Height { get; set; }
         public decimal? Weight { get; set; }
         public int? CaptureRate { get; set; }
         public int? EggSteps { get; set; }
