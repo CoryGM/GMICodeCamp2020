@@ -1,0 +1,68 @@
+﻿@page "/pokedex"
+
+<h3>Pokedex</h3>
+
+<div class="container-fluid">
+    @if (_viewModel != null && _searchModel != null)
+    {
+        <EditForm Model="_searchModel"
+                  OnValidSubmit="OnSearchFormSubmittedAsync"
+                  class="pokedex-search-form-container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="general-search">Search</label>
+                        <InputText id="general-search"
+                                   @bind-Value=_searchModel.SearchTerm
+                                   disabled="@_formDisabled"></InputText>
+                    </div>
+                </div>
+
+                <div class="col-md-4 float-right">
+                    <button type="button"
+                            class="btn btn-sm btn-outline-primary pokedex-search-form-button"
+                            @onclick="OnResetSearchButtonClicked"
+                            disabled="@_formDisabled">
+                        <i class="oi oi-reload"></i> Reset
+                    </button>
+                    <button type="submit"
+                            class="btn btn-sm btn-outline-primary pokedex-search-form-button"
+                            diabled="@_formDisabled">
+                        <i class="oi oi-magnifying-glass"></i> Search
+                    </button>
+                </div>
+            </div>
+        </EditForm>
+
+        <ErrorList Errors="_errors" />
+
+        @if (!_errors.Any())
+        {
+            <table class="table table-striped table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Type 1</th>
+                        <th>Type 2</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var entity in _viewModel.Entities)
+                    {
+                        <tr>
+                            <td><a href="pokedex-detail\@entity.Id">View</a></td>
+                            <td>@entity.Id</td>
+                            <td>@entity.Name</td>
+                            <td>@entity.Type1</td>
+                            <td>@entity.Type2</td>
+                            <td>@entity.Category</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    }
+</div>

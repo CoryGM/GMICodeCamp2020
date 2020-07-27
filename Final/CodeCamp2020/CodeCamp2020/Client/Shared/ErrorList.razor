@@ -1,0 +1,15 @@
+﻿@if (Errors != null && Errors.Any())
+{
+    <div class="error-list-container">
+        <div class="alert alert-warning">
+            <div class="error-list-header">Errors</div>
+
+            <ul>
+                @foreach (var error in Errors)
+                {
+                    <li class="error-list-item">@error</li>
+                }
+            </ul>
+        </div>
+    </div>
+}

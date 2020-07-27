@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeCamp2020.Shared", "Code
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeCamp2020.PageServices", "CodeCamp2020.PageServices\CodeCamp2020.PageServices.csproj", "{62AA78B6-152F-4A80-90BD-76BABD4A10D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamp2020.Core", "CodeCamp2020.Core\CodeCamp2020.Core.csproj", "{0F7181DC-E56B-407D-A9A5-5F0B8BFA7429}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeCamp2020.Core", "CodeCamp2020.Core\CodeCamp2020.Core.csproj", "{0F7181DC-E56B-407D-A9A5-5F0B8BFA7429}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

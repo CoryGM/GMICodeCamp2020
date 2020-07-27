@@ -7,15 +7,15 @@ namespace CodeCamp2020.Shared.Pages
     {
         private List<string> _errors = new List<string>();
 
-        public List<string> Errors
+        public List<string> Errors 
         {
-            get
+            get 
             {
                 if (_errors == null)
                     _errors = new List<string>();
 
-                return _errors;
-            }
+                return _errors; 
+            } 
 
             set { _errors = value; }
         }

@@ -1,16 +1,10 @@
 using System;
-using System.Linq;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
-using CodeCamp2020.Data;
-using CodeCamp2020.Data.Json;
-using CodeCamp2020.Data.Json.Pokemons;
-using CodeCamp2020.PageServices.Pokemons;
 
 namespace CodeCamp2020.Server
 {

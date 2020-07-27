@@ -183,7 +183,41 @@ app {
 }
 
 /**********************************************
-    pokedex-detail
+    error-list component
+***********************************************/
+.error-list-container {
+    width: 98%;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.error-list-header {
+    font-size: large;
+    font-weight: 600;
+    text-align: center;
+    margin-top: -0.5rem;
+}
+
+.error-list-item {
+    margin-top: 0.1rem;
+    margin-bottom: -0.45rem;
+}
+
+/**********************************************
+    pokedex page
+***********************************************/
+.pokedex-search-form-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pokedex-search-form-button {
+    width: 9rem;
+    margin-left: 0.5rem;
+}
+
+/**********************************************
+    pokedex-detail page
 ***********************************************/
 @media (max-width: 767.98px) {
     .pokedex-detail-pokemon-picture {

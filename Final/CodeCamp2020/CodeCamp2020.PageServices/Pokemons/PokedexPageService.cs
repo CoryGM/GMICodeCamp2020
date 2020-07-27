@@ -37,7 +37,16 @@ namespace CodeCamp2020.PageServices.Pokemons
                 Type2 = x.Type2
             }));
 
+            if (!String.IsNullOrWhiteSpace(searchTerm) && searchTerm.Equals("errors"))
+                AddErrors(viewModel);
+
             return viewModel;
+        }
+
+        private void AddErrors(ViewModel viewModel)
+        {
+            viewModel.AddError("This is the first error.");
+            viewModel.AddError("This is the second error.");
         }
     }
 }
