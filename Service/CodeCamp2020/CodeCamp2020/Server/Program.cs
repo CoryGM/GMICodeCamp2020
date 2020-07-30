@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+
+using Serilog;
+using Serilog.Events;
 
 namespace CodeCamp2020.Server
 {
@@ -13,7 +12,32 @@ namespace CodeCamp2020.Server
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            Log.Logger = new LoggerConfiguration()
+              .MinimumLevel.Information()
+              .MinimumLevel.Override("CodeCamp2020.Server", LogEventLevel.Information)
+              .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+              .MinimumLevel.Override("System", LogEventLevel.Warning)
+              .Enrich.FromLogContext()
+              .WriteTo.Console(outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+              .CreateLogger();
+
+            Log.Information("Starting CodeCamp2020.Server...");
+
+            try
+            {
+                CreateHostBuilder(args)
+                    .Build()
+                    .Run();
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "CodeCamp2020.Server terminated unexpectedly");
+            }
+            finally
+            {
+                Log.Information("Stopping CodeCamp2020.Server....");
+                Log.CloseAndFlush();
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -21,6 +45,7 @@ namespace CodeCamp2020.Server
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseSerilog();
                 });
     }
 }

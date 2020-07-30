@@ -11,6 +11,8 @@ using CodeCamp2020.Data;
 using CodeCamp2020.Data.Json;
 using CodeCamp2020.Data.Json.Pokemons;
 using CodeCamp2020.PageServices.Pokemons;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace CodeCamp2020.Server
 {
@@ -36,8 +38,12 @@ namespace CodeCamp2020.Server
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, 
+                              IWebHostEnvironment env,
+                              ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddSerilog(dispose: true);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
